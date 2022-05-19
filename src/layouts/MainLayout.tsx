@@ -1,5 +1,5 @@
-import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
 
 interface IProps {
   children: JSX.Element | string;
@@ -8,9 +8,9 @@ interface IProps {
 const MainLayout = ({ children }: IProps) => {
   return (
     <>
-      <Footer />
-      {children}
       <Header />
+      {children}
+      <Footer />
     </>
   );
 };

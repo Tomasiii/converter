@@ -1,8 +1,7 @@
 interface IProps {}
 
 const Footer = ({}: IProps) => {
-  return;
-  <>Footer</>;
+  return <>Footer</>;
 };
 
 export default Footer;
