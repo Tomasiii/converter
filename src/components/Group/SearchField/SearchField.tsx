@@ -6,10 +6,10 @@ import styles from "./searchField.module.scss";
 
 interface ISearchField {
   searchTerm: string;
-  handleSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleMoney: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const SearchField: FC<ISearchField> = ({ handleSearch, searchTerm }) => {
+const SearchField: FC<ISearchField> = ({ handleMoney, searchTerm }) => {
   return (
     <div className={styles.search}>
       <MaterialIcon icon="MdAttachMoney" />
@@ -17,7 +17,7 @@ const SearchField: FC<ISearchField> = ({ handleSearch, searchTerm }) => {
         placeholder="Search"
         type="number"
         value={searchTerm}
-        onChange={handleSearch}
+        onChange={handleMoney}
       />
     </div>
   );

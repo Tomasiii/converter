@@ -1,6 +1,6 @@
 import style from "./flag.module.scss";
 
-enum EFlags {
+export enum EFlags {
   "UAH" = -6345,
   "EUR" = -1890,
   "USD" = -6453,

@@ -1,12 +1,15 @@
 import Select, { components } from "react-select";
 
-import { countryOptions } from "@/components/Group/group.data";
+import { ICountryOption, countryOptions } from "@/components/Group/group.data";
 
 import style from "./country-select.module.scss";
 
-interface IProps {}
+interface IProps {
+  currency: string;
+  handleCurrency: (newValue: ICountryOption) => void;
+}
 
-const CountrySelect = ({}: IProps) => {
+const CountrySelect = ({ currency, handleCurrency }: IProps) => {
   const { Option, SingleValue } = components;
 
   // icon in options
@@ -25,12 +28,17 @@ const CountrySelect = ({}: IProps) => {
     </SingleValue>
   );
 
+  const normalize = (cur: string) =>
+    countryOptions.find((item) => item.value === cur);
+
   const SelectWithFlag = (props: any) => {
     return (
       <Select
         {...props}
         components={{ Option: IconOption, SingleValue: IconValue }}
         options={countryOptions}
+        onChange={handleCurrency}
+        value={normalize(currency)}
       />
     );
   };
