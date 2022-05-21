@@ -1,16 +1,17 @@
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .marquee {
-  width: 400px;
-  .rateCountry{
+  width: 450px;
+  cursor: pointer;
+  .rateCountry {
     font-weight: 600;
     margin-right: 8px;
   }
-  .rate{
+  .rate {
     color: green;
     margin-right: 25px;
   }

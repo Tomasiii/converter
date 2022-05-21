@@ -1,8 +1,10 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, memo, useCallback } from "react";
 
 import CountrySelect from "@/components/Group/CountrySelect/CountrySelect";
+import { ICountryOption } from "@/components/Group/CountrySelect/select.data";
 import SearchField from "@/components/Group/SearchField/SearchField";
-import { ICountryOption } from "@/components/Group/group.data";
+
+import style from "./group.module.scss";
 
 interface IProps {
   money: string;
@@ -12,19 +14,20 @@ interface IProps {
 }
 
 const Group = ({ money, setMoney, currency, setCurrency }: IProps) => {
-  const handleMoney = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleMoney = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setMoney(e.target.value);
-  };
-  const handleCurrency = (newValue: ICountryOption) => {
+  }, []);
+
+  const handleCurrency = useCallback((newValue: ICountryOption) => {
     setCurrency(newValue.value);
-  };
+  }, []);
 
   return (
-    <div>
+    <div className={style.group}>
       <CountrySelect handleCurrency={handleCurrency} currency={currency} />
       <SearchField searchTerm={money} handleMoney={handleMoney} />
     </div>
   );
 };
 
-export default Group;
+export default memo(Group);

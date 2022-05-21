@@ -1,33 +1,35 @@
-// import { useEffect } from "react";
-// import { axi } from "@/api/axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+
+import ChangeTheme from "@/components/Header/ChangeTheme/ChangeTheme";
+
+import { axi } from "@/api/axios";
 
 import style from "./header.module.scss";
 
 const Header = () => {
+  // default data before loading
   const [rate, setRate] = useState({
-    USDEUR: 0.94545,
-    USDGBP: 0.80114,
-    USDUAH: 29.561209,
+    USDEUR: 1,
+    USDGBP: 1,
+    USDUAH: 1,
   });
 
-  console.log(setRate);
-
-  // useEffect(() => {
-  //   axi
-  //       .get("live", {
-  //         params: {
-  //           source: "USD",
-  //           currencies: "UAH,EUR,GBP",
-  //         },
-  //       })
-  //       .then((res) => (setRate(res.data.quotes)));
-  // }, []);
+  useEffect(() => {
+    axi
+      .get("live", {
+        params: {
+          source: "USD",
+          currencies: "UAH,EUR,GBP",
+        },
+      })
+      .then((res) => setRate(res.data.quotes));
+  }, []);
 
   return (
     <header className={style.header}>
-      <h2>Header</h2>
+      <h1>Convertor</h1>
+      <ChangeTheme />
       <Marquee pauseOnHover className={style.marquee} gradientWidth={11}>
         <div>
           <span className={style.rateCountry}>USD/UAH</span>

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, memo } from "react";
 
 import MaterialIcon from "@/components/Icons/MaterialIcon";
 
@@ -23,4 +23,4 @@ const SearchField: FC<ISearchField> = ({ handleMoney, searchTerm }) => {
   );
 };
 
-export default SearchField;
+export default memo(SearchField);

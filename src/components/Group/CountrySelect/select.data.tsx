@@ -13,6 +13,7 @@ export const countryOptions: readonly ICountryOption[] = [
     icon: <FlagIcon flag="UAH" />,
   },
   { value: "EUR", label: "Евро", icon: <FlagIcon flag="EUR" /> },
+  { value: "GBP", label: "Фунт стерлингов", icon: <FlagIcon flag="GBP" /> },
   {
     value: "USD",
     label: "Доллар США",

@@ -4,6 +4,7 @@ export enum EFlags {
   "UAH" = -6345,
   "EUR" = -1890,
   "USD" = -6453,
+  "GBP" = -2214,
 }
 
 interface IProps {

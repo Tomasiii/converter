@@ -9,6 +9,7 @@
     color: darken(grey, 10%);
     margin-right: 5px;
     font-size: 25px;
+    fill: green;
   }
 
   > input {
@@ -23,8 +24,5 @@
 
   &:focus-within {
     border-color: black;
-    > svg {
-      fill: green;
-    }
   }
 }

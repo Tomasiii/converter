@@ -1,4 +1,17 @@
-.converter {
+.converter{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.groupWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 40%;
+}
+.swapper{
+  font-size: 45px;
+  color: green;
+  cursor: pointer;
+  margin: 15px;
 }

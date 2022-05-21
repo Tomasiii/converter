@@ -1,31 +1,25 @@
 import { useEffect, useState } from "react";
+import { VscArrowSwap } from "react-icons/vsc";
 
 import Chart from "@/components/Chart/Chart";
 import Group from "@/components/Group/Group";
 
-// import { axi } from "@/api/axios";
+import { ConverterService } from "@/services/converter.service";
+
 import style from "./convertor.module.scss";
 
-interface IProps {}
-
-const Converter = ({}: IProps) => {
+const Converter = () => {
   const [firInput, setFirInput] = useState("");
-  const [firSelect, setFirSelect] = useState("");
+  const [firSelect, setFirSelect] = useState("UAH");
   const [secInput, setSecInput] = useState("");
-  const [secSelect, setSecSelect] = useState("");
-  // const [exchangeRate, setExchangeRate] = useState(1);
-  const exchangeRate = 2;
+  const [secSelect, setSecSelect] = useState("USD");
+  const [exchangeRate, setExchangeRate] = useState(1);
 
-  // useEffect(() => {
-  //   axi
-  //     .get("live", {
-  //       params: {
-  //         source: `${firSelect}`,
-  //         currencies: `${secSelect}`,
-  //       },
-  //     })
-  //     .then((res) => (setExchangeRate(res.data.quotes[`${firSelect}${secSelect}`])));
-  // }, [firSelect, secSelect]);
+  useEffect(() => {
+    ConverterService.getExchangeRate(firSelect, secSelect).then((res) =>
+      setExchangeRate(res.data.quotes[`${firSelect}${secSelect}`])
+    );
+  }, [firSelect, secSelect]);
 
   useEffect(() => {
     setSecInput(String(+firInput * exchangeRate));
@@ -35,23 +29,32 @@ const Converter = ({}: IProps) => {
     setFirInput(String(+secInput / exchangeRate));
   }, [secInput]);
 
+  const swapper = () => {
+    setFirSelect(secSelect);
+    setSecSelect(firSelect);
+    setFirInput("");
+    setSecInput("");
+  };
+
   return (
     <main>
-      <h2>Convertor</h2>
       <div className={style.converter}>
-        <Group
-          money={firInput}
-          setMoney={setFirInput}
-          currency={firSelect}
-          setCurrency={setFirSelect}
-        />
-        <Group
-          money={secInput}
-          setMoney={setSecInput}
-          currency={secSelect}
-          setCurrency={setSecSelect}
-        />
-        <Chart />
+        <div className={style.groupWrapper}>
+          <Group
+            money={firInput}
+            setMoney={setFirInput}
+            currency={firSelect}
+            setCurrency={setFirSelect}
+          />
+          <VscArrowSwap className={style.swapper} onClick={() => swapper()} />
+          <Group
+            money={secInput}
+            setMoney={setSecInput}
+            currency={secSelect}
+            setCurrency={setSecSelect}
+          />
+        </div>
+        <Chart firFlag={firSelect} secFlag={secSelect} />
       </div>
     </main>
   );

@@ -1,6 +1,10 @@
+import { memo } from "react";
 import Select, { components } from "react-select";
 
-import { ICountryOption, countryOptions } from "@/components/Group/group.data";
+import {
+  ICountryOption,
+  countryOptions,
+} from "@/components/Group/CountrySelect/select.data";
 
 import style from "./country-select.module.scss";
 
@@ -46,4 +50,4 @@ const CountrySelect = ({ currency, handleCurrency }: IProps) => {
   return <SelectWithFlag />;
 };
 
-export default CountrySelect;
+export default memo(CountrySelect);
