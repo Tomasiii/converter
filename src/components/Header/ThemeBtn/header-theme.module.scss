@@ -1,5 +1,5 @@
 .theme {
-  color:var(--text-color);
+  color: var(--text-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,9 +8,8 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
-  &:hover{
+  &:hover {
     transform: translateY(-1px);
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
   }
 }
-

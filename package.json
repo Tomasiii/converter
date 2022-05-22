@@ -42,7 +42,7 @@
     "check-types": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "check-lint": "eslint --fix . --ext ts --ext js --ext tsx",
-    "test-all": "yarn format && yarn check-lint && yarn check-types",
+    "test-all": "yarn format && yarn check-lint && yarn check-types && yarn test",
     "prepare": "husky install"
   },
   "eslintConfig": {
@@ -64,6 +64,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^8.5.0",

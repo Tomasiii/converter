@@ -11,7 +11,7 @@ const themeBtn = () => {
   const { t } = useTranslation();
 
   return (
-    <div onClick={toggleTheme} className={style.theme}>
+    <div onClick={toggleTheme} className={style.theme} data-testid="theme-btn">
       {t("header.btn.theme")}
       {theme === "light" ? (
         <BsSunFill color={"#ffde00"} size={25} />

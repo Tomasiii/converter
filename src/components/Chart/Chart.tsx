@@ -26,7 +26,6 @@ interface IChartData {
 
 const Chart = ({ firFlag, secFlag }: IProps) => {
   const { t } = useTranslation();
-  console.log(t);
   const [startDate, setStartDate] = useState(yearBeforeDate());
   const [chartData, setChartData] = useState<null | IChartData>(null);
   const [activeBtn, setActiveBtn] = useState(0);
@@ -98,7 +97,6 @@ const Chart = ({ firFlag, secFlag }: IProps) => {
             {/* @ts-ignore*/}
             <AnimateSharedLayout>
               <p className={style.title}>{t("chartBtn.title")}</p>
-
               {dataBtn().map((btn, i) => (
                 <ChartBtn
                   key={btn.key}

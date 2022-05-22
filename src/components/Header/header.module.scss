@@ -3,14 +3,12 @@
   align-items: center;
   justify-content: space-between;
 
-  .logo{
-    color:var(--text-color);
+  .logo {
+    color: var(--text-color);
     display: flex;
     align-items: center;
-    .logoGreener{
-      color: lighten(green, 7%) ;
+    .logoGreener {
+      color: lighten(green, 7%);
     }
   }
-
-
 }

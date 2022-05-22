@@ -5,9 +5,6 @@ export const axi = axios.create({
   baseURL: "https://api.apilayer.com/exchangerates_data/",
   headers: {
     "Content-Type": "application/json",
-    // apikey: "3i87yrBKXJTRQ5vg1561Rz4FhbbYX0Sp",
-    // nmurQGxFXGWOsTbXMrhTJyZ7IHi3piId - соня, SNleukyUmI8lfR5vcpQKKgA9NHMjceRN - Vlad
+    apikey: "nmurQGxFXGWOsTbXMrhTJyZ7IHi3piId",
   },
 });
-
-// test

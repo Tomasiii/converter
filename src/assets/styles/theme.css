@@ -1,25 +1,21 @@
 html[data-theme="light"] {
-  --main-black:rgb(18, 17, 17);
+  --main-black: rgb(18, 17, 17);
 
   --text-color: var(--main-black);
-  --border-color:var(--main-black);
-  --background-color:var(--main-black);
+  --border-color: var(--main-black);
+  --background-color: var(--main-black);
 
-  --layout-glass:rgba(255, 255, 255, 0.97);
+  --layout-glass: rgba(255, 255, 255, 0.97);
   --layout-background-img: url("@/assets/img/moneyBg.jpg");
-
 }
 
 html[data-theme="dark"] {
-  --main-white:#fff;
+  --main-white: #fff;
 
   --text-color: var(--main-white);
-  --border-color:var(--main-white);
-  --background-color:var(--main-white);
+  --border-color: var(--main-white);
+  --background-color: var(--main-white);
 
   --layout-glass: rgb(18, 17, 17);
   --layout-background-img: var(--layout-glass);
-
-
 }
-

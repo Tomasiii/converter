@@ -13,11 +13,11 @@ const Converter = () => {
   const [firSelect, setFirSelect] = useState("USD");
   const [secInput, setSecInput] = useState("");
   const [secSelect, setSecSelect] = useState("UAH");
-  const [exchangeRate, setExchangeRate] = useState(2);
+  const [exchangeRate, setExchangeRate] = useState(1);
 
   useEffect(() => {
     ConverterService.getExchangeRate(firSelect, secSelect).then((res) =>
-      setExchangeRate(res.data.rates[`${secSelect}`])
+      setExchangeRate(res.data.rates[`${secSelect}`].toFixed(3))
     );
   }, [firSelect, secSelect]);
 

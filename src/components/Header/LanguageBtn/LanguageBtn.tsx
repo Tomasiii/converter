@@ -13,8 +13,12 @@ const LanguageBtn = () => {
   };
 
   return (
-    <div className={style.langWrapper}>
-      <span className={style.en} onClick={() => changeLanguage("en")}>
+    <div className={style.langWrapper} data-testid="language-btn">
+      <span
+        className={style.en}
+        onClick={() => changeLanguage("en")}
+        data-testid="language-btn-en"
+      >
         EN
       </span>
       <input
@@ -23,7 +27,11 @@ const LanguageBtn = () => {
         onChange={toggleLanguage}
         className={style.check}
       />
-      <span className={style.ua} onClick={() => changeLanguage("ua")}>
+      <span
+        className={style.ua}
+        onClick={() => changeLanguage("ua")}
+        data-testid="language-btn-ua"
+      >
         UA
       </span>
     </div>

@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 
 import "./main-layout.css";
@@ -13,7 +12,6 @@ const MainLayout = ({ children }: IProps) => {
       <div className={"mainLayoutGlass"}>
         <Header />
         {children}
-        <Footer />
       </div>
     </div>
   );
