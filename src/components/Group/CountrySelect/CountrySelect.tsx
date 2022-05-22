@@ -4,7 +4,7 @@ import Select, { components } from "react-select";
 import {
   ICountryOption,
   countryOptions,
-} from "@/components/Group/CountrySelect/select.data";
+} from "@/components/Group/CountrySelect/country-select.data";
 
 import style from "./country-select.module.scss";
 
@@ -33,14 +33,14 @@ const CountrySelect = ({ currency, handleCurrency }: IProps) => {
   );
 
   const normalize = (cur: string) =>
-    countryOptions.find((item) => item.value === cur);
+    countryOptions().find((item) => item.value === cur);
 
   const SelectWithFlag = (props: any) => {
     return (
       <Select
         {...props}
         components={{ Option: IconOption, SingleValue: IconValue }}
-        options={countryOptions}
+        options={countryOptions()}
         onChange={handleCurrency}
         value={normalize(currency)}
       />

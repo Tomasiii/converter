@@ -1,0 +1,38 @@
+.langWrapper{
+  position: relative;
+  .check{
+    width: 60px;
+    cursor: pointer;
+
+    &:before{
+      content: '';
+      position: absolute;
+      top:-1px;
+      width: 60px;
+      height: 25px;
+      background: #00a1ff;
+      border-radius: 25px;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      left: 30px;
+      top:-1px;
+      width: 25px;
+      height: 25px;
+      background: #fff;
+      border-radius: 25px;
+      transition: 0.25s;
+      border: 2px solid #333;
+      box-sizing: border-box;
+    }
+
+    &:checked:after{
+      left: 65px;
+    }
+  }
+}
+.en, .ua{
+  color: var(--text-color);
+  cursor: pointer;
+}

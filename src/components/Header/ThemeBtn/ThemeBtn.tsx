@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { BsSunFill } from "react-icons/bs";
 import { IoIosMoon } from "react-icons/io";
 
@@ -5,12 +6,13 @@ import { useTheme } from "@/hooks/useTheme";
 
 import style from "./header-theme.module.scss";
 
-const changeTheme = () => {
+const themeBtn = () => {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <div onClick={toggleTheme} className={style.theme}>
-      Theme
+      {t("header.btn.theme")}
       {theme === "light" ? (
         <BsSunFill color={"#ffde00"} size={25} />
       ) : (
@@ -20,4 +22,4 @@ const changeTheme = () => {
   );
 };
 
-export default changeTheme;
+export default themeBtn;

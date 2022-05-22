@@ -1,9 +1,10 @@
 import { AnimateSharedLayout } from "framer-motion";
 import { memo, useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { useTranslation } from "react-i18next";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import ChartBtn from "@/components/Chart/ChartBtn";
+import ChartBtn from "@/components/Chart/ChartBtn/ChartBtn";
 import { dataBtn } from "@/components/Chart/chart.data";
 import SkeletonLoader from "@/components/SkeletonLoader/SkeletonLoader";
 
@@ -24,6 +25,8 @@ interface IChartData {
 }
 
 const Chart = ({ firFlag, secFlag }: IProps) => {
+  const { t } = useTranslation();
+  console.log(t);
   const [startDate, setStartDate] = useState(yearBeforeDate());
   const [chartData, setChartData] = useState<null | IChartData>(null);
   const [activeBtn, setActiveBtn] = useState(0);
@@ -31,7 +34,7 @@ const Chart = ({ firFlag, secFlag }: IProps) => {
   useEffect(() => {
     ConverterService.getTimeframeRate(firFlag, secFlag, startDate).then(
       (res) => {
-        const quotes = res.data.quotes;
+        const quotes = res.data.rates;
         setChartData({
           categories: Object.keys(quotes),
           data: Object.values(quotes).map((quote) => Object.values(quote)[0]),
@@ -94,13 +97,13 @@ const Chart = ({ firFlag, secFlag }: IProps) => {
           <div className={style.periodBtn}>
             {/* @ts-ignore*/}
             <AnimateSharedLayout>
-              <p>Sort By:</p>
+              <p className={style.title}>{t("chartBtn.title")}</p>
 
-              {dataBtn.map((btn, i) => (
+              {dataBtn().map((btn, i) => (
                 <ChartBtn
-                  key={btn.label}
+                  key={btn.key}
                   activeColor={apexColor}
-                  label={btn.label}
+                  label={t(btn.i18Label)}
                   isSelected={i === activeBtn}
                   handleClick={() => {
                     setStartDate(btn.onClick());
@@ -112,7 +115,7 @@ const Chart = ({ firFlag, secFlag }: IProps) => {
           </div>
         </>
       ) : (
-        <SkeletonLoader height={350} width={600} />
+        <SkeletonLoader height={400} width={600} />
       )}
     </div>
   );

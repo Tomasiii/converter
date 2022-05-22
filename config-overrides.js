@@ -5,7 +5,7 @@ module.exports = function override(config) {
     "@/api": "src/api",
     "@/assets": "src/assets",
     "@/components": "src/components",
-    "@/configs": "src/configs",
+    "@/config": "src/config",
     "@/hooks": "src/hooks",
     "@/layouts": "src/layouts",
     "@/pages": "src/pages",

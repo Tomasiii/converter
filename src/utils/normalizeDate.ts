@@ -20,8 +20,8 @@ export const yearBeforeDate = () => {
   return normalize(oneYearFromNow);
 };
 
-export const monthBeforeDate = (month: number) => {
-  const time = new Date(new Date().setMonth(new Date().getMonth() - month));
+export const threeMonthBeforeDate = () => {
+  const time = new Date(new Date().setMonth(new Date().getMonth() - 3));
   return normalize(time);
 };
 

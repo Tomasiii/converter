@@ -1,0 +1,20 @@
+{
+  "header": {
+    "btn": {
+      "theme": "Theme"
+    }
+  },
+  "select": {
+    "UAH": "Ukraine Hryvnia",
+    "EUR": "Euro",
+    "GBP": "Great British Pound",
+    "USD": "US Dollar"
+  },
+  "chartBtn": {
+    "title": "Sort By:",
+    "year": "Year",
+    "three-month": "Three Month",
+    "week": "Week"
+  }
+
+}

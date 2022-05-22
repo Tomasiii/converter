@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   transition: all 0.3s linear;
+  background: #ffffff;
   > svg {
     color: darken(grey, 10%);
     margin-right: 5px;
@@ -13,7 +14,7 @@
   }
 
   > input {
-    background: transparent;
+    //background: transparent;
     width: 100%;
     outline: none;
     border: none;
@@ -23,6 +24,6 @@
   }
 
   &:focus-within {
-    border-color: black;
+    border-color: var(--border-color);
   }
 }

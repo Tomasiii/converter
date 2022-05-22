@@ -1,10 +1,12 @@
-.periodBtn{
+.periodBtn {
   display: flex;
   justify-content: space-around;
   align-items: center;
   border: 1px solid #c2c2c2;
-
-  & > div{
+  .title{
+    color:var(--text-color)
+  }
+  & > div {
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;

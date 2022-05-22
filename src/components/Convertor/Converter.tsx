@@ -10,20 +10,20 @@ import style from "./convertor.module.scss";
 
 const Converter = () => {
   const [firInput, setFirInput] = useState("");
-  const [firSelect, setFirSelect] = useState("UAH");
+  const [firSelect, setFirSelect] = useState("USD");
   const [secInput, setSecInput] = useState("");
-  const [secSelect, setSecSelect] = useState("USD");
-  const [exchangeRate, setExchangeRate] = useState(1);
+  const [secSelect, setSecSelect] = useState("UAH");
+  const [exchangeRate, setExchangeRate] = useState(2);
 
   useEffect(() => {
     ConverterService.getExchangeRate(firSelect, secSelect).then((res) =>
-      setExchangeRate(res.data.quotes[`${firSelect}${secSelect}`])
+      setExchangeRate(res.data.rates[`${secSelect}`])
     );
   }, [firSelect, secSelect]);
 
   useEffect(() => {
     setSecInput(String(+firInput * exchangeRate));
-  }, [firInput]);
+  }, [firInput, exchangeRate]);
 
   useEffect(() => {
     setFirInput(String(+secInput / exchangeRate));
@@ -32,8 +32,6 @@ const Converter = () => {
   const swapper = () => {
     setFirSelect(secSelect);
     setSecSelect(firSelect);
-    setFirInput("");
-    setSecInput("");
   };
 
   return (
@@ -46,7 +44,7 @@ const Converter = () => {
             currency={firSelect}
             setCurrency={setFirSelect}
           />
-          <VscArrowSwap className={style.swapper} onClick={() => swapper()} />
+          <VscArrowSwap className={style.swapper} onClick={swapper} />
           <Group
             money={secInput}
             setMoney={setSecInput}

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import style from "./chartBtn.module.scss";
+
 interface IProps {
   isSelected: boolean;
   label: string;
@@ -11,8 +13,8 @@ const ChartBtn = ({ label, isSelected, handleClick, activeColor }: IProps) => {
   return (
     <motion.div
       onClick={handleClick}
-      initial={{ color: "#000" }}
-      animate={{ color: isSelected ? activeColor : "#000" }}
+      className={style.btn}
+      animate={{ color: isSelected ? activeColor : "" }}
       style={{ position: "relative" }}
     >
       {label}

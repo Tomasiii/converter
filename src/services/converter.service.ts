@@ -5,24 +5,20 @@ import { ITimeframe } from "@/services/converter.types";
 import { nowDate } from "@/utils/normalizeDate";
 
 export const ConverterService = {
-  async getExchangeRate(source: string, currencies: string) {
-    return axi.get("live", {
+  async getExchangeRate(base: string, symbols: string) {
+    return axi.get("latest", {
       params: {
-        source,
-        currencies,
+        base,
+        symbols,
       },
     });
   },
 
-  async getTimeframeRate(
-    source: string,
-    currencies: string,
-    start_date: string
-  ) {
-    return axi.get<ITimeframe>("timeframe", {
+  async getTimeframeRate(base: string, symbols: string, start_date: string) {
+    return axi.get<ITimeframe>("timeseries", {
       params: {
-        source,
-        currencies,
+        base,
+        symbols,
         start_date,
         end_date: nowDate(),
       },

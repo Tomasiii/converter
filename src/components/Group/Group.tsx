@@ -1,7 +1,7 @@
 import { ChangeEvent, memo, useCallback } from "react";
 
 import CountrySelect from "@/components/Group/CountrySelect/CountrySelect";
-import { ICountryOption } from "@/components/Group/CountrySelect/select.data";
+import { ICountryOption } from "@/components/Group/CountrySelect/country-select.data";
 import SearchField from "@/components/Group/SearchField/SearchField";
 
 import style from "./group.module.scss";

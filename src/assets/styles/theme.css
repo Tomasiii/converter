@@ -1,27 +1,25 @@
-html[data-theme='dark'] {
-    --button-text-color: #ffffff;
-    --button-background-color: #4e005c;
-    --button-border-color: #ba8fc2;
+html[data-theme="light"] {
+  --main-black:rgb(18, 17, 17);
 
-    --input-text-color: #ffffff;
-    --input-placeholder-text-color: #dddddd;
-    --input-background-color: #7c7c7c;
-    --input-border-color: #ba8fc2;
+  --text-color: var(--main-black);
+  --border-color:var(--main-black);
+  --background-color:var(--main-black);
 
-    --background-color: #292929;
-    --icon-color: #ba8fc2;
+  --layout-glass:rgba(255, 255, 255, 0.97);
+  --layout-background-img: url("@/assets/img/moneyBg.jpg");
+
 }
 
-html[data-theme='light'] {
-    --button-text-color: #252525;
-    --button-background-color: #f9d4ff;
-    --button-border-color: #4e005c;
+html[data-theme="dark"] {
+  --main-white:#fff;
 
-    --input-text-color: #252525;
-    --input-placeholder-text-color: #a7a7a7;
-    --input-background-color: #ffffff;
-    --input-border-color: #4e005c;
+  --text-color: var(--main-white);
+  --border-color:var(--main-white);
+  --background-color:var(--main-white);
 
-    --background-color: #dfdfdf;
-    --icon-color: #4e005c;
+  --layout-glass: rgb(18, 17, 17);
+  --layout-background-img: var(--layout-glass);
+
+
 }
+

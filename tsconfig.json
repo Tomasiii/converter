@@ -20,7 +20,7 @@
       "@/api/*": ["api/*"],
       "@/assets/*": ["assets/*"],
       "@/components/*": ["components/*"],
-      "@/configs/*": ["configs/*"],
+      "@/config/*": ["config/*"],
       "@/hooks/*": ["hooks/*"],
       "@/layouts/*": ["layouts/*"],
       "@/pages/*": ["pages/*"],
