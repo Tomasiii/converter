@@ -39,6 +39,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
+    "test:cypress": "start-server-and-test start http://localhost:3000 cypress",
+    "cypress": "cypress open",
     "check-types": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "check-lint": "eslint --fix . --ext ts --ext js --ext tsx",
@@ -66,12 +68,14 @@
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "cypress": "^9.6.1",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
     "husky": "^7.0.0",
     "prettier": "^2.6.0",
     "react-app-rewire-alias": "^1.1.7",
-    "react-app-rewired": "^2.2.1"
+    "react-app-rewired": "^2.2.1",
+    "start-server-and-test": "^1.14.0"
   }
 }
