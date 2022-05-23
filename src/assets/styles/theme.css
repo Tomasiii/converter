@@ -10,7 +10,7 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-  --main-white: #fff;
+  --main-white: rgb(255, 255, 255);
 
   --text-color: var(--main-white);
   --border-color: var(--main-white);

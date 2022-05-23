@@ -12,7 +12,9 @@ const themeBtn = () => {
 
   return (
     <div onClick={toggleTheme} className={style.theme} data-testid="theme-btn">
-      {t("header.btn.theme")}
+      <span className={style.theme_label} data-testid="theme-btn-text">
+        {t("header.btn.theme")}
+      </span>
       {theme === "light" ? (
         <BsSunFill color={"#ffde00"} size={25} />
       ) : (

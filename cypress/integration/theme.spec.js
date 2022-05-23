@@ -23,18 +23,27 @@ describe("theme", () => {
     );
   });
 
-  // it("should change color", () => {
-  //   cy.get('div[data-testid="theme-btn"]').should(
-  //     "have.css",
-  //     "color",
-  //     "rgb(0,0,0)"
-  //   );
-  //     cy.get('div[data-testid="theme-btn"]')
-  //       .click()
-  //       .should("have.css", "color", "rgb(18, 17, 17)");
-  //
-  //     cy.get('div[data-testid="theme-btn"]')
-  //       .click()
-  //       .should("have.css", "color", "rgb(0,0,0)");
-  // });
+  it("should change color", () => {
+    cy.visit("/");
+
+    cy.get('span[data-testid="theme-btn-text"]').should(
+      "have.css",
+      "color",
+      "rgb(18, 17, 17)"
+    );
+
+    cy.get('div[data-testid="theme-btn"]').click();
+    cy.get('span[data-testid="theme-btn-text"]').should(
+      "have.css",
+      "color",
+      "rgb(255, 255, 255)"
+    );
+
+    cy.get('div[data-testid="theme-btn"]').click();
+    cy.get('span[data-testid="theme-btn-text"]').should(
+      "have.css",
+      "color",
+      "rgb(18, 17, 17)"
+    );
+  });
 });

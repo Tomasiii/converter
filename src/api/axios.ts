@@ -6,6 +6,6 @@ export const axi = axios.create({
     "Content-Type": "application/json",
     apikey: "nmurQGxFXGWOsTbXMrhTJyZ7IHi3piId",
     // apikey: "3i87yrBKXJTRQ5vg1561Rz4FhbbYX0Sp",
-    //apikey: "SNleukyUmI8lfR5vcpQKKgA9NHMjceRN"
+    // apikey: "SNleukyUmI8lfR5vcpQKKgA9NHMjceRN"
   },
 });
