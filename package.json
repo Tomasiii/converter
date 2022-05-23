@@ -44,7 +44,7 @@
     "check-types": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "check-lint": "eslint --fix . --ext ts --ext js --ext tsx",
-    "test-all": "yarn format && yarn check-lint && yarn check-types && yarn test",
+    "test-all": "yarn format && yarn check-lint && yarn check-types && yarn test:cypress",
     "prepare": "husky install"
   },
   "eslintConfig": {

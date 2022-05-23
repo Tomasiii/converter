@@ -8,12 +8,12 @@ interface IProps {
 
 const MainLayout = ({ children }: IProps) => {
   return (
-    <div className={"mainLayout"}>
-      <div className={"mainLayoutGlass"}>
+    <main className={"mainLayout"}>
+      <div className={"mainLayoutGlass"} data-testid="main-glass">
         <Header />
         {children}
       </div>
-    </div>
+    </main>
   );
 };
 
