@@ -14,12 +14,12 @@ export const ConverterService = {
     });
   },
 
-  async getTimeframeRate(base: string, symbols: string, start_date: string) {
+  async getTimeframeRate(base: string, symbols: string, startDate: string) {
     return axi.get<ITimeframe>("timeseries", {
       params: {
         base,
         symbols,
-        start_date,
+        start_date: startDate,
         end_date: nowDate(),
       },
     });
